@@ -1,2 +1,13 @@
-<h1>StaticPages#Checkpoint_1</h1>
-<p>Find me in app/views/static_pages/Checkpoint_1.html.erb</p>
+<% provide(:title, '1') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tagging checkpoints App</title>
+  </head>
+  <body>
+    <h1>Checkpoint # <%= yield(:title) %></h1>
+   <p>Here information related to Checkpoint # <%= yield(:title) %>  will be displayed</p>
+<p>alarms, work instructions, checklists, etc</p>
+<div class="alert alert-danger">Alarm event in Checkpoint # <%= yield(:title) %></div>
+  </body>
+</html>
