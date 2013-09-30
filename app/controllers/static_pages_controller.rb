@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
-  def Checkpoint_1
+  def checkpoint1
   end
 
-  def Checkpoint_2
+  def checkpoint2
   end
 end

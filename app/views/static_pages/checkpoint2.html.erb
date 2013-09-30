@@ -1,0 +1,23 @@
+<% provide(:title, '2') %>
+<div class="center hero-unit">
+<h1>Checkpoint # <%= yield(:title) %></h1>	
+	
+  <p>Here information related to Checkpoint # <%= yield(:title) %>  will be displayed</p>
+<p>alarms, work instructions, checklists, etc</p>
+
+<% status ={ success: "Alarm event corrected", alarm: "Alarm event in Checkpoint #"} %>
+
+<div class="alert alert-danger"><%= status[:alarm] + yield(:title) %></div>
+	
+	
+</div>
+    
+ 
+<div class="center hero-unit">
+ 
+    <h1>Alarm Information</h1>
+    
+    <p>Information about this alarm will be displayed</p>
+    <a href="#" class="btn btn-success btn-large "><i class="icon-white icon-ok"></i></a>
+ 
+</div>

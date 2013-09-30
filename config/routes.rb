@@ -1,7 +1,12 @@
 Prot1TaggingApp::Application.routes.draw do
-  get "static_pages/Checkpoint_1"
-  get "static_pages/Checkpoint_2"
-  get "welcome/index"
+  root  'static_pages#checkpoint1'
+  match '/checkpoint2', to: 'static_pages#checkpoint2', via: 'get'
+  #match '/Checkpoint2', to: 'static_pages#Checkpoint_1', via: 'get'
+  #match '/checkpoint2', to: 'static_pages#checkpoint2', via: 'get'
+
+ #get "static_pages/checkpoint1"
+ # get "static_pages/Checkpoint_2"
+  #get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
