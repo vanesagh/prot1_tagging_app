@@ -1,14 +1,13 @@
-<% provide(:title, '2') %>
+<% provide(:title, '2') 
+status ={ success: " corrected", alarm: "Alarm event in Checkpoint #"} %>
+%>
 <div class="center hero-unit">
 <h1>Checkpoint # <%= yield(:title) %></h1>	
 	
   <p>Here information related to Checkpoint # <%= yield(:title) %>  will be displayed</p>
 <p>alarms, work instructions, checklists, etc</p>
 
-<% status ={ success: "Alarm event corrected", alarm: "Alarm event in Checkpoint #"} %>
 
-<div class="alert alert-danger"><%= status[:alarm] + yield(:title) %></div>
-	
 	
 </div>
     
@@ -16,8 +15,30 @@
 <div class="center hero-unit">
  
     <h1>Alarm Information</h1>
+    <div class="alert alert-danger" id="info"><%= status[:alarm] + yield(:title) %></div>
     
     <p>Information about this alarm will be displayed</p>
-    <a href="#" class="btn btn-success btn-large "><i class="icon-white icon-ok"></i></a>
+   <button class="btn btn-success btn-large"  onclick="return change(this,'info');"> <i class="icon-white icon-ok"></i> </button>
+ 
+ <script type="text/javascript">
+function change( el,idtext )
+{
+    if ( el.className === 'btn btn-success btn-large' )
+      {  el.className = 'btn btn-danger btn-large';
+      document.getElementById(idtext).className='alert alert-success';
+      document.getElementById(idtext).innerHTML='<%= status[:alarm] + yield(:title) + status [:success] %>';
+      
+      }
+    else
+    {el.className = 'btn btn-success btn-large';
+     document.getElementById(idtext).className='alert alert-danger';
+     document.getElementById(idtext).innerHTML='<%= status[:alarm] + yield(:title) %></div> '  ;
+       }
+         
+}
+
+
+</script>
+ 
  
 </div>
