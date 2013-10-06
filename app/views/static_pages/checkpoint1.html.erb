@@ -3,21 +3,32 @@ status ={ success: "corrected", alarm: "Alarm event in Checkpoint #"} %>
 <div class="center hero-unit">
 	
 <h1>Checkpoint # <%= yield(:title) %></h1>	
+<h2> ABB Robot RB1600
+<img  class="pull-right"  src="https://cloudant.com/db/vanesagh/machine1/0c1c79ff841d1cc9f380d71d26bcc039/93676c.jpg" id="roboimage" width="100" height="100">	
+</h2>
+<!-- <canvas  id="otro" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas> -->
+
+
+<!--<% require 'couchrest'
+@db=CouchRest.database("https://vanesagh:chufu13@vanesagh.cloudant.com/machine1")
+doc=@db.get("0c1c79ff841d1cc9f380d71d26bcc039")
+image=@db.fetch_attachment(doc,"93676c.jpg")
+%>
+-->
+
+
+<h3>Alarm Information</h3>
+<div class="alert alert-danger" id="info"><%= status[:alarm] + yield(:title) %>
 	
-  <p>Here information related to Checkpoint # <%= yield(:title) %>  will be displayed</p>
-<p>alarms, work instructions, checklists, etc</p>
-
-
-
-
-
-<h2>Alarm Information</h2>
-<div class="alert alert-danger" id="info"><%= status[:alarm] + yield(:title) %></div>
-   
- <p>Information about this alarm will be displayed</p>
-
-
+</div>
 <button class="btn btn-success btn-large"  onclick="return change(this,'info');"> <i class="icon-white icon-ok"></i> </button>
+
+
+ 
+  
+ <div>
+<embed src="https://cloudant.com/db/vanesagh/machine1/0c1c79ff841d1cc9f380d71d26bcc039/RAPID.pdf" width="600" height="600">
+</div>
 
 <script type="text/javascript">
 function change( el,idtext )
@@ -35,6 +46,22 @@ function change( el,idtext )
        }
          
 }
+// manipulating the image
+//function drawImage(myImage){
+//var canvas = document.getElementById("otro");
+//var ctx = canvas.getContext("2d");	
+//ctx.drawImage(myImage,10, 10,100,100);
+
+//}
+
+//myImage = new Image();
+//myImage.onload = function() {
+//drawImage(this);
+  // Draw image.
+//}
+//myImage.src = 'https://cloudant.com/db/vanesagh/machine1/0c1c79ff841d1cc9f380d71d26bcc039/93676c.jpg';
+
+
 
 
 </script>

@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 /* header */
-
+header {
 #logo {
   float: left;
   margin-right: 10px;
@@ -17,7 +17,15 @@
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}  
+ul li
+{
+text-transform: uppercase;
+}  
+  
+  
 }
+
 
 
 .hero-unit {
@@ -25,7 +33,7 @@ padding:50px 50px 50px 50px;
     }
     
 /* Landscape phones and down */
-  @media (max-width: 480px) { 
+  @media (max-width: 400px) { 
 
  .hero-unit{
 margin-left:-20px;
